@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   line-height: 1.618;
   max-width: 48em;
   margin: auto;
@@ -21,12 +21,12 @@ body {
 
 @media (max-width: 684px) {
   body {
-    font-size: 1.53rem;
+    font-size: 1.35rem;
   }
 }
 @media (max-width: 382px) {
   body {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
   }
 }
 h1, h2, h3, h4, h5, h6 {
@@ -86,7 +86,6 @@ a:visited {
 }
 a:hover {
   color: #91663c;
-  border-bottom: 2px solid #4a4a4a;
 }
 
 ul {
@@ -172,31 +171,21 @@ textarea {
   width: 100%;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+  color: #9b9084;
+}
+
 .button, button, input[type=submit], input[type=reset], input[type=button], input[type=file]::file-selector-button {
-  display: inline-block;
-  padding: 5px 10px;
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
-  background-color: #1d7484;
-  color: #f9f9f9;
-  border-radius: 1px;
-  border: 1px solid #1d7484;
   cursor: pointer;
-  box-sizing: border-box;
 }
 .button[disabled], button[disabled], input[type=submit][disabled], input[type=reset][disabled], input[type=button][disabled], input[type=file]::file-selector-button[disabled] {
   cursor: default;
   opacity: 0.5;
-}
-.button:hover, button:hover, input[type=submit]:hover, input[type=reset]:hover, input[type=button]:hover, input[type=file]::file-selector-button:hover {
-  background-color: #982c61;
-  color: #f9f9f9;
-  outline: 0;
-}
-.button:focus-visible, button:focus-visible, input[type=submit]:focus-visible, input[type=reset]:focus-visible, input[type=button]:focus-visible, input[type=file]::file-selector-button:focus-visible {
-  outline-style: solid;
-  outline-width: 2px;
 }
 
 textarea, select, input {
@@ -225,6 +214,7 @@ label, legend, fieldset {
 }
 div#main-profile {
   display: flex;
+  grid-area: main-profile;
   flex-direction: row;
   align-items: center;
   padding: 1em;
@@ -249,12 +239,13 @@ div#ring-buttons {
 
 .post {
   margin: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.post-title {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.post > p {
+  margin: 0.3em;
 }
 
 .post-title time {
@@ -269,8 +260,27 @@ div#ring-buttons {
 
 .split > div {
   width: 50%;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
-.split > div:first-child {
-  border-right: 3px dotted #d6c6b6;
+#main-content {
+  grid-area: main-content;
+}
+
+#side-menu {
+  border-bottom: 1px solid #d6c6b6;
+  padding: 1em;
+  grid-area: side-menu;
+  width: 100%;
+}
+
+#side-menu > a {
+  font-weight: bold;
+  margin-right: 1em;
+}
+
+time {
+  font-style: italic;
+  color: #9b9084;
 }

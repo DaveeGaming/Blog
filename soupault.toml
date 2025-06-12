@@ -171,12 +171,11 @@
   index_selector = "#blog-index"
   index_item_template = """
   <div class="post"> 
-    <div class="post-title"> 
-      <a href={{url}}><h3>{{title}}</h3></a>
-      <time>{{date}}</time>
-    </div>
-
-    <p>{{excerpt}}
+    <a href={{url}}>
+      <h3 align="center">{{title}}</h3>
+    </a>
+    <p>{{excerpt}}</p>
+    <time>{{date}}</time>
   </div>
   """
 
@@ -185,12 +184,10 @@
   index_selector = "#project-index"
   index_item_template = """
   <div class="post"> 
-    <div class="post-title"> 
-      <a href={{url}}><h3>{{title}}</h3></a>
-      <time>{{date}}</time>
-    </div>
-
-    <p>{{excerpt}}
+    <a href={{url}}>
+      <h3 align="center">{{title}}</h3>
+    </a>
+    <p>{{excerpt}}</p>
+    <time>{{date}}</time>
   </div>
-
   """
