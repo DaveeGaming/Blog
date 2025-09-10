@@ -106,8 +106,8 @@
   page_character_encoding = "utf-8"
  
 
-#[preprocessors]
-#  md = "cmark --unsafe --smart"
+[preprocessors]
+ md = "pandoc -f commonmark+smart -t html"
 #  adoc = "asciidoctor -o -"
 
 [widgets.insert_image_ring]
