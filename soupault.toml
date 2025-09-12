@@ -144,7 +144,11 @@
 [widgets.insert-sakura-css]
   widget = "insert_html"
   selector = "head"
-  html = """ <link rel="stylesheet" href="/sakura.css" type="text/css"> """
+  html = """
+    <link rel="stylesheet" href="/sakura.css" type="text/css"> 
+    <link rel="stylesheet" href="/prism.css" type="text/css"> 
+    <script src="/prism.js"></script>
+  """
 
 [index]
   dump_json = "dump/dump.json"

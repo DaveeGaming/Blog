@@ -6,6 +6,8 @@
   </title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="/sakura.css" type="text/css">
+  <link rel="stylesheet" href="/prism.css" type="text/css">
+  <script src="/prism.js"></script>
  </head>
  <body>
   <div id="main-page">
@@ -24,38 +26,24 @@
    <div id="main-content">
     <div id="blog-index">
      <div class="post">
-      <a href="/posts/post2/">
+      <a href="/posts/post1/">
       
       <h3 align="center">
-       Title
+       Making an RSS feed with soupault
       </h3>
       
     
      </a>
      <p>
-      This is a post excerpt
+      Let's look at how to create an RSS feed using a lua plugin for soupault!
      </p>
-     <time>2025-09-07T12:00:00Z</time>
+     <time>2025-09-12T12:00:00Z</time>
     </div>
-    <div class="post">
-     <a href="/posts/post1/">
-      
-     <h3 align="center">
-      Title
-     </h3>
-     
-    
-    </a>
-    <p>
-     This is a post excerpt
-    </p>
-    <time>2025-09-07T12:00:00Z</time>
    </div>
   </div>
  </div>
-</div>
-<script>
- const kaomojis = ["(*＞ω＜*)♡","૮ ˶ᵔ ᵕ ᵔ˶ ა", "(૭ ｡•̀ ᵕ •́｡ )૭", "(ᓀ‸ᓂ)", "( ˶o˶˶o˶) !!", "૮₍˶ᵔ ᵕ ᵔ˶ ₎ა", 
+ <script>
+  const kaomojis = ["(*＞ω＜*)♡","૮ ˶ᵔ ᵕ ᵔ˶ ა", "(૭ ｡•̀ ᵕ •́｡ )૭", "(ᓀ‸ᓂ)", "( ˶o˶˶o˶) !!", "૮₍˶ᵔ ᵕ ᵔ˶ ₎ა", 
   "≽^• ˕ • ྀི≼", "૮₍ ˃ ⤙ ˂ ₎ა", "ദ്ദി(ᵔᗜᵔ)", "( ˶ˆ꒳ˆ˵ )", "(*ᴗ͈ˬᴗ͈)ꕤ*.ﾟ", "₍^. .^₎⟆", "(˶˃ ᵕ ˂˶) .ᐟ.ᐟ"]
 // Credit: IT's all from the website https://emojidb.org/kaomojis-emojis
 
@@ -67,6 +55,6 @@ function random_kaomoji() {
   let random = Math.floor(Math.random() * kaomojis.length);
   button.textContent = kaomojis[random];
 }
-</script>
+ </script>
 </body>
 </html>

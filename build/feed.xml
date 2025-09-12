@@ -2,31 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
 <title>epimoni dev feed</title>
-<link href="https://epimoni.dev"/>
-<updated>2025-09-12T13:33:33Z</updated>
+<link href="https://epimoni.dev/"/>
+<link href="https://epimoni.dev/feed.xml" rel="self"/>
+<updated>2025-09-12T15:49:05Z</updated>
 <author>
 	<name>epimoni</name>
 </author>
-<id>https://epimoni.dev</id>
+<id>https://epimoni.dev/</id>
 
 <entry>
-	<title>Title</title>
-	<link href="https://epimoni.dev/posts/post2/" />
-	<published>2025-09-07T12:00:00Z</published>
-	<summary>This is a post excerpt</summary>
-	<updated>2025-09-12T13:10:00Z</updated>
-	<category>posts</category>
-	<id>https://epimoni.dev</id>
-</entry>
-
-<entry>
-	<title>Title</title>
+	<title>Making an RSS feed with soupault</title>
 	<link href="https://epimoni.dev/posts/post1/" />
-	<published>2025-09-07T12:00:00Z</published>
-	<summary>This is a post excerpt</summary>
-	<updated>2025-09-12T13:09:53Z</updated>
-	<category>posts</category>
-	<id>https://epimoni.dev</id>
+	<published>2025-09-12T12:00:00Z</published>
+	<summary>Let's look at how to create an RSS feed using a lua plugin for soupault!</summary>
+	<updated>2025-09-12T15:49:05Z</updated>
+	<category term="posts" />
+	<id>https://epimoni.dev/posts/post1/</id>
 </entry>
 
 <entry>
@@ -36,8 +27,8 @@
 	<summary>This is a really weird project idea I came upon on Youtube of someone sorting an image's pixels by their
 *(r, g, b)* values and I desperately wanted to recreate that. The visuals need a lot of attention (◞‸◟)💧</summary>
 	<updated>2025-09-12T13:10:12Z</updated>
-	<category>projects</category>
-	<id>https://epimoni.dev</id>
+	<category term="projects" />
+	<id>https://epimoni.dev/projects/image_sort/</id>
 </entry>
 
 </feed>

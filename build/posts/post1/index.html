@@ -2,10 +2,12 @@
 <html lang="en">
  <head>
   <title>
-   Title — My Homepage
+   Making an RSS feed with soupault — My Homepage
   </title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="/sakura.css" type="text/css">
+  <link rel="stylesheet" href="/prism.css" type="text/css">
+  <script src="/prism.js"></script>
  </head>
  <body>
   <div id="main-page">
@@ -23,16 +25,146 @@
    </div>
    <div id="main-content">
     <h1>
-     Title
+     Making an RSS feed with soupault
     </h1>
     <p>
-     <strong>Date:</strong> <time id="post-date">2025-09-07T12:00:00Z</time>
+     <strong>Date:</strong> <time id="post-date">2025-09-12T12:00:00Z</time>
     </p>
     <p id="post-excerpt">
-     This is a post excerpt
+     Let's look at how to create an RSS feed using a lua plugin for soupault!
+    </p>
+    <p></p>
+    <h3>
+     Motivation
+    </h3>
+    <p></p>
+    <p>
+     I always had a slight itch to get into blogging, and when I found the static site generator Soupault, I instantly fell in love. It's simplicity made the tool extremely easy to use and expand upon, one of these features are the metadata processor and json dump.
+Before getting into the middle of things, let's check out how the soupault tool works, and what you can do with it.
+    </p>
+    <p></p>
+    <h3>
+     Preparation
+    </h3>
+    <p></p>
+    <p>
+     The tool provides some built in plugins that scrape your html based on a css filter, and extracts it for you. Let's look at an example:
+    </p>
+    <pre><code class="language-toml">[index.fields.title]
+  selector = ["h1"]
+
+[index.fields.date]
+  selector = ["time#post-date"]
+  extract_attribute = "datetime"
+  fallback_to_content = true
+
+[index.fields.excerpt]
+  selector = ["p#post-excerpt"]
+</code></pre>
+    <p>
+     The <strong>index.fields</strong> defines what widget we want to use, and the last name can be completely arbitrary. Selectors use the same format just as if you were writing a css file. Having multiple filters makes it try them in order, this allows you to set defaults.
+    </p>
+    <pre><code class="language-toml">[index.fields.title]
+  # We could try to find the h1 specifically set as the title,
+  # or fall back to the first h1 it finds
+  selector = ["h1#title", "h1"]
+</code></pre>
+    <p>
+     One place where I use these extracted metadatas is the post and projects list, using another built in widget type called views.
+    </p>
+    <p></p>
+    <h3>
+     Using metadata
+    </h3>
+    <p></p>
+    <p>
+     Once we extracted our index fields, all of our fields will be available cached in the tool. The built in view widget uses these metadataas in an Ocaml jingoo template to auto fill a completely different html element.
+    </p>
+    <pre><code class="language-toml">[index.views.blog]
+  section = "posts/"
+  index_selector = "#blog-index"
+  index_item_template = """
+    &lt;div class="post"&gt; 
+        &lt;a href={{url}}&gt;
+        &lt;h3 align="center"&gt;{{title}}&lt;/h3&gt;
+        &lt;/a&gt;
+        &lt;p&gt;{{excerpt}}&lt;/p&gt;
+        &lt;time&gt;{{date}}&lt;/time&gt;
+    &lt;/div&gt;
+    """
+</code></pre>
+    <p>
+     This widget will scan all our files in the <strong>posts/</strong> folder, get their metadata, and then generate html code at another given css selector, which is <strong>#blog-index</strong> in this instance.
     </p>
     <p>
-     This is the main content of the post
+     As a fun fact, let me show what the <strong>posts/index.html</strong> looks like before building.
+    </p>
+    <pre><code class="language-html"> &lt;div id="blog-index"&gt;&lt;/div&gt;
+</code></pre>
+    <p>
+     That's it!
+    </p>
+    <p>
+     Okay not completely, there is visibly a lot more content on the page, let me get to that.
+Every page also uses a template, with the same system as the metadata, but here, we aren't extracting any specific info, but the whole html.
+This is my simple template as of writing this post:
+    </p>
+    <pre><code class="language-html">&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="main-page"&gt;
+      &lt;div id="main-profile"&gt;&lt;/div&gt;
+      &lt;div id="side-menu"&gt;
+        &lt;a href="/"&gt;Home&lt;/a&gt;
+        &lt;a href="/posts"&gt;Posts&lt;/a&gt;
+        &lt;a href="/projects"&gt;Projects&lt;/a&gt;
+        &lt;button id="kaomoji" onClick="random_kaomoji()"&gt;d(o.o)b&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div id="main-content"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    <p>
+     Our <strong>posts=index.html</strong> simply gets inserted into the <strong>main-content</strong> div and voila! A whole page.
+    </p>
+    <p></p>
+    <h3>
+     Finally, RSS
+    </h3>
+    <p></p>
+    <p>
+     Knowing all the tiny simple magic behind soupault, I hope you can appreciate how fun it is to set a simple setting flag, and all the metadata info gets generated into a json dump file!
+    </p>
+    <pre><code class="language-toml">[index]
+  dump_json = "dump/dump.json"
+</code></pre>
+    <p>
+     Let's quickly look at one of these json entries
+    </p>
+    <pre><code class="language-json">  {
+    "url": "/posts/post1/",
+    "page_file": "site\\posts\\post1.md",
+    "nav_path": [
+      "posts"
+    ],
+    "excerpt": "Let's look at how to create an RSS feed using a lua plugin for soupault!",
+    "date": "2025-09-12T12:00:00Z",
+    "title": "Making an RSS feed with soupault"
+  },
+</code></pre>
+    <p>
+     We can see that, just as with the template language, this reuses that arbitrary name we specified in the toml config file.
+Meaning you can extract absolutely any part of the html and use it for anything
+    </p>
+    <p>
+     Now all that's left is to process the json and write the rss xml.
+I could have most definitely found a third party program for this, but with
+such a simple xml format, I really didn't find the need to. This was also a good
+opportunity to pull our beloved lua into the project.
     </p>
    </div>
   </div>

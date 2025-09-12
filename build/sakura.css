@@ -27,6 +27,10 @@ body {
   background-color: #242424;
 }
 
+body pre {
+  color: #242424;
+}
+
 @media (max-width: 684px) {
   body {
     font-size: 1.35rem;

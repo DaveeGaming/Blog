@@ -1,0 +1,12 @@
+{
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": ".*",
+                "cmd": ".\\run.bat",
+                "showElapsed": true,
+                "autoShowOutputPanel": "always"
+            }
+        ]
+    }
+}
