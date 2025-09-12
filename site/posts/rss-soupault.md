@@ -8,7 +8,8 @@
 
 <h3> Motivation </h3>
 
-I always had a slight itch to get into blogging, and when I found the static site generator Soupault, I instantly fell in love. It's simplicity made the tool extremely easy to use and expand upon, one of these features are the metadata processor and json dump.
+I always had a slight itch to get into blogging, and when I found the static site generator Soupault, I instantly fell in love. It's 
+simplicity made the tool extremely easy to use and expand upon, one of the biggest feature being the metadata processor.
 Before getting into the middle of things, let's check out how the soupault tool works, and what you can do with it.
 
 <h3> Preparation </h3>

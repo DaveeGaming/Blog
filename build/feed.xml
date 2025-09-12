@@ -4,7 +4,7 @@
 <title>epimoni dev feed</title>
 <link href="https://epimoni.dev/"/>
 <link href="https://epimoni.dev/feed.xml" rel="self"/>
-<updated>2025-09-12T15:49:05Z</updated>
+<updated>2025-09-12T15:58:44Z</updated>
 <author>
 	<name>epimoni</name>
 </author>
@@ -12,12 +12,12 @@
 
 <entry>
 	<title>Making an RSS feed with soupault</title>
-	<link href="https://epimoni.dev/posts/post1/" />
+	<link href="https://epimoni.dev/posts/rss-soupault/" />
 	<published>2025-09-12T12:00:00Z</published>
 	<summary>Let's look at how to create an RSS feed using a lua plugin for soupault!</summary>
-	<updated>2025-09-12T15:49:05Z</updated>
+	<updated>2025-09-12T15:54:38Z</updated>
 	<category term="posts" />
-	<id>https://epimoni.dev/posts/post1/</id>
+	<id>https://epimoni.dev/posts/rss-soupault/</id>
 </entry>
 
 <entry>
