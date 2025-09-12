@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>
+   My Homepage
+  </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/sakura.css" type="text/css">
+ </head>
+ <body>
+  <div id="main-page">
+   <div id="main-profile">
+    <img src="/images/profile.jpg" id="profile-pic">
+    <h3>
+     <a href="/">epimoni.dev</a>
+    </h3>
+   </div>
+   <div id="side-menu">
+    <a href="/">Home</a>
+        <a href="/posts">Posts</a>
+        <a href="/projects">Projects</a>
+        <button id="kaomoji" onclick="random_kaomoji()">d(o.o)b</button>
+   </div>
+   <div id="main-content">
+    <div id="project-index">
+     <div class="post">
+      <a href="/projects/image_sort/">
+      
+      <h3 align="center">
+       Image sorting
+      </h3>
+      
+    
+     </a>
+     <p>
+      This is a really weird project idea I came upon on Youtube of someone sorting an image's pixels by their
+*(r, g, b)* values and I desperately wanted to recreate that. The visuals need a lot of attention (◞‸◟)💧
+     </p>
+     <time>2025-06-07T12:00:00Z</time>
+    </div>
+   </div>
+  </div>
+ </div>
+ <script>
+  const kaomojis = ["(*＞ω＜*)♡","૮ ˶ᵔ ᵕ ᵔ˶ ა", "(૭ ｡•̀ ᵕ •́｡ )૭", "(ᓀ‸ᓂ)", "( ˶o˶˶o˶) !!", "૮₍˶ᵔ ᵕ ᵔ˶ ₎ა", 
+  "≽^• ˕ • ྀི≼", "૮₍ ˃ ⤙ ˂ ₎ა", "ദ്ദി(ᵔᗜᵔ)", "( ˶ˆ꒳ˆ˵ )", "(*ᴗ͈ˬᴗ͈)ꕤ*.ﾟ", "₍^. .^₎⟆", "(˶˃ ᵕ ˂˶) .ᐟ.ᐟ"]
+// Credit: IT's all from the website https://emojidb.org/kaomojis-emojis
+
+window.addEventListener("load", random_kaomoji);
+
+function random_kaomoji() {
+  let button = document.getElementById("kaomoji")
+
+  let random = Math.floor(Math.random() * kaomojis.length);
+  button.textContent = kaomojis[random];
+}
+ </script>
+</body>
+</html>

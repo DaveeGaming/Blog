@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+<title>epimoni dev feed</title>
+<link href="https://epimoni.dev"/>
+<updated>2025-09-12T13:33:33Z</updated>
+<author>
+	<name>epimoni</name>
+</author>
+<id>https://epimoni.dev</id>
+
+<entry>
+	<title>Title</title>
+	<link href="https://epimoni.dev/posts/post2/" />
+	<published>2025-09-07T12:00:00Z</published>
+	<summary>This is a post excerpt</summary>
+	<updated>2025-09-12T13:10:00Z</updated>
+	<category>posts</category>
+	<id>https://epimoni.dev</id>
+</entry>
+
+<entry>
+	<title>Title</title>
+	<link href="https://epimoni.dev/posts/post1/" />
+	<published>2025-09-07T12:00:00Z</published>
+	<summary>This is a post excerpt</summary>
+	<updated>2025-09-12T13:09:53Z</updated>
+	<category>posts</category>
+	<id>https://epimoni.dev</id>
+</entry>
+
+<entry>
+	<title>Image sorting</title>
+	<link href="https://epimoni.dev/projects/image_sort/" />
+	<published>2025-06-07T12:00:00Z</published>
+	<summary>This is a really weird project idea I came upon on Youtube of someone sorting an image's pixels by their
+*(r, g, b)* values and I desperately wanted to recreate that. The visuals need a lot of attention (◞‸◟)💧</summary>
+	<updated>2025-09-12T13:10:12Z</updated>
+	<category>projects</category>
+	<id>https://epimoni.dev</id>
+</entry>
+
+</feed>
