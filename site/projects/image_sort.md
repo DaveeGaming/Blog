@@ -1,5 +1,5 @@
 # Image sorting
-**Date:** <time id="post-date">2025-06-07</time>
+**Date:** <time id="post-date">2025-06-07T12:00:00Z</time>
 
 <p id="post-excerpt">
 This is a really weird project idea I came upon on Youtube of someone sorting an image's pixels by their

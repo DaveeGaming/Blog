@@ -147,6 +147,7 @@
   html = """ <link rel="stylesheet" href="/sakura.css" type="text/css"> """
 
 [index]
+  dump_json = "dump/dump.json"
   index = true
 
   sort_descending = true
@@ -169,6 +170,7 @@
 [index.views.blog]
   section = "posts/"
   index_selector = "#blog-index"
+  # index_processor = "lua54 plugins/generate_feed.lua"
   index_item_template = """
   <div class="post"> 
     <a href={{url}}>
@@ -182,6 +184,7 @@
 [index.views.projects]
   section = "projects/"
   index_selector = "#project-index"
+  # index_processor = "lua54 plugins/generate_feed.lua"
   index_item_template = """
   <div class="post"> 
     <a href={{url}}>
